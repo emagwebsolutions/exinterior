@@ -1,0 +1,22 @@
+// COLORS
+@function muted($color: rgba(192, 192, 192, 1)) {
+  @return $color;
+}
+@function black($color: rgba(26, 18, 18, 1)) {
+  @return $color;
+}
+@function success($color: rgba(50, 205, 50, 1)) {
+  @return $color;
+}
+@function primary($color: rgba(65, 105, 225, 1)) {
+  @return $color;
+}
+
+@function danger($color: rgba(255, 69, 0, 1)) {
+  @return $color;
+}
+@function warning($color: rgba(255, 140, 0, 1)) {
+  @return $color;
+}
+
+// PADDINGS
