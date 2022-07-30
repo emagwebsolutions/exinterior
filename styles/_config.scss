@@ -1,22 +1,93 @@
 // COLORS
-@function muted($color: rgba(192, 192, 192, 1)) {
-  @return $color;
+@function muted($opacity: 1) {
+  @return rgba(192, 192, 192, $opacity);
 }
-@function black($color: rgba(26, 18, 18, 1)) {
-  @return $color;
+@function black($opacity: 1) {
+  @return rgba(26, 18, 18, $opacity);
 }
-@function success($color: rgba(50, 205, 50, 1)) {
-  @return $color;
+@function success($opacity: 1) {
+  @return rgba(50, 205, 50, $opacity);
 }
-@function primary($color: rgba(65, 105, 225, 1)) {
-  @return $color;
+@function primary($opacity: 1) {
+  @return rgba(65, 105, 225, $opacity);
 }
 
-@function danger($color: rgba(255, 69, 0, 1)) {
-  @return $color;
+@function danger($opacity: 1) {
+  @return rgba(255, 69, 0, $opacity);
 }
-@function warning($color: rgba(255, 140, 0, 1)) {
-  @return $color;
+@function warning($opacity: 1) {
+  @return rgba(255, 140, 0, $opacity);
+}
+
+//TEXT COLOR
+.text-muted {
+  color: muted();
+}
+.text-black {
+  color: muted();
+}
+.text-success {
+  color: success();
+}
+.text-danger {
+  color: danger();
+}
+.text-warning {
+  color: warning();
+}
+
+//BACKGROUND COLOR
+.bg-muted {
+  background-color: muted();
+}
+.bg-black {
+  background-color: muted();
+}
+.bg-success {
+  background-color: success();
+}
+.bg-danger {
+  background-color: danger();
+}
+.bg-warning {
+  background-color: warning();
 }
 
 // PADDINGS
+$var: (1, 2, 3, 4, 5, 6, 7, 8, 9, 0);
+
+@each $v in $var {
+  .p-#{$v} {
+    padding: #{$v}em;
+  }
+  .pl-#{$v} {
+    padding-left: #{$v}em;
+  }
+  .pr-#{$v} {
+    padding-right: #{$v}em;
+  }
+  .pt-#{$v} {
+    padding-top: #{$v}em;
+  }
+  .pb-#{$v} {
+    padding-bottom: #{$v}em;
+  }
+  .m-#{$v} {
+    margin: #{$v}em;
+  }
+  .ml-#{$v} {
+    margin-left: #{$v}em;
+  }
+  .mr-#{$v} {
+    margin-right: #{$v}em;
+  }
+  .mt-#{$v} {
+    margin-top: #{$v}em;
+  }
+  .mb-#{$v} {
+    margin-bottom: #{$v}em;
+  }
+  .gap-#{$v} {
+    gap: #{$v}em;
+  }
+}

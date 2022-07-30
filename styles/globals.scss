@@ -5,6 +5,11 @@
   font-size: 62.5%;
   line-height: 1.5rem;
 }
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
 
 *,
 ::after,
@@ -15,16 +20,16 @@
 }
 
 h1 {
-  font-size: clamp(1.6, 12vw, 18vw);
+  font-size: clamp(16px, 5vw, 11vw);
 }
 h2 {
-  font-size: clamp(1.4, 10vw, 16vw);
+  font-size: clamp(14px, 4vw, 9vw);
 }
 h3 {
-  font-size: clamp(1.2, 9vw, 14vw);
+  font-size: clamp(12px, 2vw, 7vw);
 }
 p {
-  font-size: clamp(1rem, 11vw, 1.6rem);
+  font-size: clamp(10px, 9vw, 16px);
   color: #444;
 }
 img {
@@ -40,4 +45,8 @@ img {
   div {
     flex: 5rem 1 1;
   }
+}
+
+ul {
+  list-style: none;
 }
