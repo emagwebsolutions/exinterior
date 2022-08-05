@@ -1,8 +1,9 @@
 import React from 'react'
+import style from './nav.module.scss'
 
 const Nav = () => {
   return (
-    <div>Nav</div>
+    <div className={style.color}>Nav</div>
   )
 }
 
