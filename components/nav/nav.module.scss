@@ -1,6 +1,47 @@
 @import '../../styles/config.scss';
 
-.color {
-  color: danger();
-  font-size: 4rem;
+.wrapper {
+  div {
+    div:nth-of-type(2) {
+      display: flex;
+      align-items: center;
+      padding-inline: 2em;
+      ul {
+        display: flex;
+        gap: 3em;
+        li:nth-of-type(3){
+          position: relative;
+
+          a{
+            color: red;
+          }
+
+          ul{
+            background-color: yellow;
+            padding: 1em;
+            display: flex;
+            width: 50rem;
+            position: absolute;
+            li:last-child{
+              padding: 1em;
+              flex-basis: 30rem;
+            }
+            li:not(:last-child){
+              padding: 1em;
+              flex-basis: 10rem;
+            }
+          }
+
+        }
+   
+        li {
+
+          a {
+            font-size: clamp(10px, 1.2vw, 1.6rem);
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from 'components/nav/Nav';
 import Footer from 'components/footer/Footer'
 import Meta from 'components/Meta'
 
@@ -15,7 +14,6 @@ const Layout = ({ children }: Children) => {
       keywords: 'y',
       title: 'EX INTERIOR DESIGN LTD'
     }}/>
-      <Nav />
       <main>{children}</main>
       <Footer />
     </>
