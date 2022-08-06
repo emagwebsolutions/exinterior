@@ -11,17 +11,32 @@
         gap: 3em;
         li:nth-of-type(3){
           position: relative;
+          &::after{
+            content: '>';
+            position: absolute;
+            font-family: Verdana!important;
+          }
 
-          a{
-            color: red;
+          &:hover ul {
+            transform: rotateY(0deg);
           }
 
           ul{
-            background-color: yellow;
+
+            box-sizing: border-box;
+            transition: 200ms transform ease-in-out;
+            transform: rotateX(90deg);
+            transform-origin: top;
+
+            line-height: 2rem;
             padding: 1em;
+            box-shadow: .2rem .2rem  2rem muted(.6);
             display: flex;
-            width: 50rem;
+            width: clamp(100px, 60vw,60rem);
             position: absolute;
+            background-color: white;
+            left: 0;
+            top: 2rem;
             li:last-child{
               padding: 1em;
               flex-basis: 30rem;
@@ -29,13 +44,16 @@
             li:not(:last-child){
               padding: 1em;
               flex-basis: 10rem;
+              h3{
+                font-size: clamp(12px, 1.3vw,1.4rem);
+                margin-bottom: 1em;
+              }
             }
           }
 
         }
    
         li {
-
           a {
             font-size: clamp(10px, 1.2vw, 1.6rem);
             text-decoration: none;

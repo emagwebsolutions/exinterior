@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './nav.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import LargeDropdown from './LargeDropdown';
+import { MenuOne } from './DropDownMenus';
 
 const Nav = () => {
   return (
@@ -34,51 +36,12 @@ const Nav = () => {
               </Link>
             </li>
 
-
-
-
-
-
             <li>
               <Link href="">
                 <a>Sanitary ware</a>
               </Link>
-
-
-              <ul>
-                <li>One</li>
-                <li>Two</li>
-
-                <li>
-                  <Image
-                    src="/wc.PNG"
-                    alt=""
-                    width="5"
-                    height="4"
-                    layout="responsive"
-                  />
-                </li>
-              </ul>
-
-
+                <LargeDropdown img="wc.PNG" data={<MenuOne />} />
             </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             <li>
               <Link href="">
