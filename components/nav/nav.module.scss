@@ -6,53 +6,69 @@
       display: flex;
       align-items: center;
       padding-inline: 2em;
-      ul {
+      & > ul {
         display: flex;
-        gap: 3em;
-        li:nth-of-type(3){
-          position: relative;
-          &::after{
-            content: '>';
-            position: absolute;
-            font-family: Verdana!important;
-          }
+        gap: 4em;
+        position: relative;
+
+        //Drop down menus
+        & > li:nth-of-type(2)::after {
+          content: '^';
+          font-family: Verdana !important;
+          font-size: 1rem !important;
+          transform: rotate(180deg);
+          display: block;
+        }
+
+        & > li:nth-of-type(3)::after {
+          content: '^';
+          font-family: Verdana !important;
+          font-size: 1rem !important;
+          transform: rotate(180deg);
+          display: block;
+        }
+
+        li:nth-of-type(3),
+        li:nth-of-type(2) {
+          display: flex;
+          gap: 0.5em;
 
           &:hover ul {
             transform: rotateY(0deg);
           }
 
-          ul{
-
+          & > ul {
             box-sizing: border-box;
             transition: 200ms transform ease-in-out;
             transform: rotateX(90deg);
             transform-origin: top;
-
-            line-height: 2rem;
+            line-height: 2.3rem;
             padding: 1em;
-            box-shadow: .2rem .2rem  2rem muted(.6);
+            box-shadow: 0.2rem 0.2rem 2rem muted(0.6);
             display: flex;
-            width: clamp(100px, 60vw,60rem);
+            width: clamp(300px, 70vw, 80rem);
             position: absolute;
             background-color: white;
             left: 0;
             top: 2rem;
-            li:last-child{
+            li:last-child {
               padding: 1em;
-              flex-basis: 30rem;
+              flex: 30rem 1 1;
             }
-            li:not(:last-child){
+            & > li:not(:last-child) {
               padding: 1em;
-              flex-basis: 10rem;
-              h3{
-                font-size: clamp(12px, 1.3vw,1.4rem);
+              flex: 10rem 1 1;
+
+              display: flex;
+              flex-direction: column;
+              h3 {
+                font-size: clamp(12px, 1.3vw, 1.4rem);
                 margin-bottom: 1em;
               }
             }
           }
-
         }
-   
+
         li {
           a {
             font-size: clamp(10px, 1.2vw, 1.6rem);

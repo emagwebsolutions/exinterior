@@ -30,27 +30,28 @@ const Nav = () => {
               </Link>
             </li>
 
-            <li>
-              <Link href="">
-                <a>About Us</a>
-              </Link>
-            </li>
 
             <li>
               <Link href="">
-                <a>Sanitary ware</a>
+                <a>Sanitary</a>
               </Link>
                 <LargeDropdown img="wc.PNG" data={<MenuOne />} />
             </li>
 
+
             <li>
               <Link href="">
-                <a>Contact Us</a>
+                <a>Pages</a>
               </Link>
+              <LargeDropdown img="wc.PNG" data={<MenuOne />} />
             </li>
+
+
+
+
           </ul>
         </div>
-        <div className="col-1 bg-warning">SIGN OUT</div>
+
       </div>
     </nav>
   );
