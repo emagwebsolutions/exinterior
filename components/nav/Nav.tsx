@@ -1,28 +1,35 @@
 import React from 'react';
-import styles from './nav.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
-import LargeDropdown from './LargeDropdown';
-import { MenuOne } from './DropDownMenus';
+
+
+import {
+  Sanitary,
+  // Faucets,
+  // Showers,
+  // Bathroomfurniture,
+  // Bathroomaccessories,
+} from './DropDownMenus';
 
 const Nav = () => {
   return (
-    <nav className={styles.wrapper}>
+    <nav>
       <div className="container">
-        <div className="col-1">
+        <div className="col-2">
           <Link href="/">
             <a>
               <Image
                 src="/logo.PNG"
                 alt="Logo"
                 layout="responsive"
-                width="5"
-                height="3"
+                width="3"
+                height="1"
               />
             </a>
           </Link>
         </div>
-        <div className="col-7">
+
+        <div className="col-6">
           <ul>
             <li>
               <Link href="">
@@ -30,28 +37,52 @@ const Nav = () => {
               </Link>
             </li>
 
-
             <li>
               <Link href="">
                 <a>Sanitary</a>
               </Link>
-                <LargeDropdown img="wc.PNG" data={<MenuOne />} />
+              <Sanitary />
             </li>
 
+            <li>
+              <Link href="">
+                <a>Faucets</a>
+              </Link>
+              {/* <Faucets /> */}
+            </li>
+
+            <li>
+              <Link href="">
+                <a>Showers</a>
+              </Link>
+              {/* <Showers /> */}
+            </li>
+
+            <li>
+              <Link href="">
+                <a>Bathroom Furniture</a>
+              </Link>
+
+              {/* <Bathroomfurniture /> */}
+            </li>
+
+            <li>
+              <Link href="">
+                <a>Bathroom Accessories</a>
+              </Link>
+              {/* <Bathroomaccessories /> */}
+            </li>
 
             <li>
               <Link href="">
                 <a>Pages</a>
               </Link>
-              <LargeDropdown img="wc.PNG" data={<MenuOne />} />
             </li>
-
-
-
-
           </ul>
         </div>
-
+        <div className="col-2">
+          ffgdgdgdfgdgfgfdg
+        </div>
       </div>
     </nav>
   );
