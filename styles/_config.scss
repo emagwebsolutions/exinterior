@@ -9,14 +9,14 @@
   @return rgba(50, 205, 50, $opacity);
 }
 @function primary($opacity: 1) {
-  @return rgba(29, 55, 80, $opacity);
+  @return rgba(20, 55, 80, $opacity);
 }
 
 @function danger($opacity: 1) {
   @return rgba(232, 27, 70, $opacity);
 }
 @function warning($opacity: 1) {
-  @return rgba(255, 140, 0, $opacity);
+  @return rgba(232, 144, 54, $opacity);
 }
 @function white($opacity: 1) {
   @return rgba(255, 255, 255, $opacity);
