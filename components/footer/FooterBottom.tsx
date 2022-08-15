@@ -4,7 +4,7 @@ const FooterBottom = () => {
   return (
     <section>
       <footer>
-        <p>Copyright © 2022, Joga - Bath Fixtures Powered by Shopif</p>
+        <p>Copyright © 2022, Ex-Interior Designs  Powered by Emagweb Solutions</p>
       </footer>
     </section>
   );

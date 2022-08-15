@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-
 export const Pages = () => {
   return (
     <ul>
@@ -13,7 +12,6 @@ export const Pages = () => {
           <a>Contact Us</a>
         </Link>
       </li>
-
     </ul>
   );
 };
@@ -248,3 +246,9 @@ export const Bathroomaccessories = () => {
     </>
   );
 };
+
+type Link = {
+  title: string;
+  data: React.ReactNode;
+};
+
