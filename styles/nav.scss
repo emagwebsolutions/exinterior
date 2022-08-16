@@ -1,7 +1,6 @@
 nav {
   width: 100vw;
   padding: 1em;
-  background-color: white(.6);
   div {
     div:nth-of-type(2) {
       display: flex;
@@ -35,7 +34,8 @@ nav {
             padding: 1em;
             position: relative;
             text-decoration: none;
-            font-size: clamp(9px, 1.1vw, 1.6rem);
+            font-size: clamp(9px, 1.2vw, 1.6rem);
+            color: black();
             font-weight: bold;
             position: relative;
           }
@@ -75,7 +75,8 @@ nav {
             font-weight: bold;
             position: relative;
             text-decoration: none;
-            font-size: clamp(9px, 1.1vw, 1.6rem);
+            font-size: clamp(9px, 1.2vw, 1.6rem);
+            color: black();
           }
 
           &:hover ul {
