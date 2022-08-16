@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
 
 import {
   Pages,
@@ -12,8 +13,18 @@ import {
 } from './MenuLinks';
 
 const Nav = () => {
+
+  const { ref: navElem, inView: navElemVal } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+
+
+  const navwrapper = navElemVal ? 'nav-wrapper' : 'navanim';
+
+
   return (
-    <nav>
+    <nav ref={navElem}>
       <div className="container">
         <div className="col-2">
           <Link href="/">
