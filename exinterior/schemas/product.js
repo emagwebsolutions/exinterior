@@ -9,6 +9,39 @@ export default {
       type: 'string',
     },
     {
+      name: 'size',
+      title: 'Size',
+      type: 'string',
+    },
+    {
+      name: 'colour',
+      title: 'Colour',
+      type: 'string',
+    },
+
+    {
+      name: 'material',
+      title: 'Material',
+      type: 'string',
+    },
+    {
+      name: 'brand',
+      title: 'Brand',
+      type: 'string',
+    },
+
+    {
+      name: 'producttype',
+      title: 'Product Type',
+      type: 'string',
+    },
+
+    {
+      name: 'availability',
+      title: 'Availability',
+      type: 'string',
+    },
+    {
       name: 'price',
       title: 'Price',
       type: 'number',
@@ -22,9 +55,10 @@ export default {
       },
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'string',
+      name: 'imagesGallery',
+      title: 'Images gallery',
+      type: 'array',
+      of: [{ type: 'image' }],
     },
     {
       name: 'slug',
@@ -36,14 +70,15 @@ export default {
       },
     },
     {
-      name: 'brand',
-      title: 'Brand',
-      type: 'string',
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'category' } }],
     },
     {
-      name: 'category',
-      title: 'Category',
-      type: 'string',
+      name: 'body',
+      title: 'Body',
+      type: 'blockContent',
     },
     {
       name: 'rating',
