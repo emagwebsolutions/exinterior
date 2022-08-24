@@ -64,16 +64,13 @@ export const Faucets = () => {
       <ul>
         <li className="col-2">
           <Link href="">
-            <a>Ball</a>
+            <a>GELE Bathroom Faucet</a>
           </Link>
           <Link href="">
-            <a>Disc</a>
+            <a>OWOFAN Kitchen Faucets</a>
           </Link>
           <Link href="">
-            <a>Cartridge</a>
-          </Link>
-          <Link href="">
-            <a>Compression</a>
+            <a>Bathroom Faucet</a>
           </Link>
         </li>
 
@@ -199,6 +196,57 @@ export const Bathroomfurniture = () => {
 };
 
 export const Bathroomaccessories = () => {
+  return (
+    <>
+      <ul>
+        <li className="col-2">
+          <Link href="">
+            <a>Towel Hanger </a>
+          </Link>
+          <Link href="">
+            <a> Bathroom Hooks</a>
+          </Link>
+          <Link href="">
+            <a>Bath Shelf</a>
+          </Link>
+          <Link href="">
+            <a>Toothbrush Holders</a>
+          </Link>
+        </li>
+
+        <li className="col-2">
+          <Link href="">
+            <a>Shower Curtains </a>
+          </Link>
+          <Link href="">
+            <a>Shower Mat</a>
+          </Link>
+          <Link href="">
+            <a>Shower Soap Holder</a>
+          </Link>
+          <Link href="">
+            <a>Bathtub Tray</a>
+          </Link>
+        </li>
+        <li className="col-5">
+          <div>
+            <Image
+              src="/bathaccess.PNG"
+              alt=""
+              width="3"
+              height="2"
+              layout="responsive"
+            />
+          </div>
+        </li>
+      </ul>
+    </>
+  );
+};
+
+
+
+export const Drainagesystems = () => {
   return (
     <>
       <ul>

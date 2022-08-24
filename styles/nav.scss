@@ -1,7 +1,7 @@
 nav {
   width: 100vw;
   padding: 1em;
-  background-color: white(.7);
+  background-color: white(0.7);
   div {
     div:nth-of-type(2) {
       display: flex;
@@ -10,17 +10,20 @@ nav {
         display: flex;
         position: relative;
         align-items: center;
+        & > li:nth-of-type(2) > a,
         & > li:nth-of-type(3) > a,
         & > li:nth-of-type(4) > a,
         & > li:nth-of-type(5) > a,
         & > li:nth-of-type(6) > a,
-        & > li:nth-of-type(7) > a {
+        & > li:nth-of-type(7) > a,
+        & > li:nth-of-type(8) > a
+        {
           position: relative;
           &::after {
             content: '^';
             position: absolute;
-            top: 1.5em;
-            left: -1rem;
+     
+   
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 0.9rem;
             transform: rotateX(180deg);
@@ -28,16 +31,17 @@ nav {
         }
 
         & > li:not(:last-child) {
-          gap: 1em;
+    
           & > a {
             display: block;
-            padding: 1em;
+            padding-left: 2.5em;
             position: relative;
             text-decoration: none;
-            font-size: clamp(9px, 1.2vw, 1.6rem);
+            font-size: clamp(8px, 0.8vw, 1.2rem);
             color: black();
             font-weight: bold;
             position: relative;
+            text-transform: uppercase;
           }
 
           &:hover ul {
@@ -60,7 +64,7 @@ nav {
                 display: block;
                 line-height: 2em;
                 text-decoration: none;
-                font-size: clamp(9px, 1.3vw, 1.6rem);
+                font-size: clamp(10px, 1.2vw, 1.2rem);
                 color: black;
               }
             }
@@ -72,11 +76,13 @@ nav {
           position: relative;
           & > a {
             display: block;
-            padding: 1em;
+            padding-left: 2.5em;
             font-weight: bold;
             position: relative;
             text-decoration: none;
-            font-size: clamp(9px, 1.2vw, 1.6rem);
+            font-size: clamp(8px, 0.8vw, 1.2rem);
+            text-transform: uppercase;
+            font-weight: bold;
             color: black();
           }
 
@@ -113,11 +119,10 @@ nav {
       div {
         display: flex;
         gap: 1.5rem;
-        font-size: clamp(9px, 1.4vw,1.6rem);
-        .fa-shopping-basket{
-          position: relative; 
-          span{
-     
+        font-size: clamp(9px, 1.4vw, 1.6rem);
+        .fa-shopping-basket {
+          position: relative;
+          span {
             position: absolute;
             top: -2rem;
             left: 50%;
@@ -125,8 +130,8 @@ nav {
             background-color: black;
             max-width: 1.6rem;
             max-height: 1.6rem;
-            padding: 1em; 
-            color: white; 
+            padding: 1em;
+            color: white;
             border-radius: 50%;
             font-size: 1.2rem;
             display: flex;
