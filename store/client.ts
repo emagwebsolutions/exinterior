@@ -4,7 +4,7 @@ import { projectId, dataset } from './config';
 const client = sanityClient({
   projectId,
   dataset,
-  apiVersion: '2021-08-31', 
+  apiVersion: '2022-08-16', 
   useCdn: true,
 });
 

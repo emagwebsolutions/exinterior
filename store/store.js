@@ -3,6 +3,9 @@ import { getCookie } from 'cookies-next';
 
 const initialState = {
   getPost: getCookie('getpost') ? JSON.parse(getCookie('getpost')) : '',
+  getProduct: getCookie('getproduct')
+    ? JSON.parse(getCookie('getproduct'))
+    : '',
 };
 
 const reducer = (state, { type, payload }) => {
@@ -10,7 +13,12 @@ const reducer = (state, { type, payload }) => {
     case 'GET_POST':
       return {
         ...state,
-        getPost: state.getPost? state.getPost : payload
+        getPost: state.getPost ? state.getPost : payload,
+      };
+    case 'GET_PRODUCT':
+      return {
+        ...state,
+        getProduct: state.getProduct ? state.getProduct : payload,
       };
     default:
       return state;

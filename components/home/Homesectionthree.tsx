@@ -15,26 +15,31 @@ const Homesectionthree = () => {
 
   const elem = Object.values(getallPost)
     .filter((v: any) => {
-      return v.slug == 'welcome-to-ex-interior-designs-ltd';
+      return v.cat_title == 'productcategories';
     })
     .map((vl: any, k: any) => {
       return (
-        <div key={k} className="col-1">
+        <div key={k} className="col-3 prodcat">
+          <div>
             <Image
-              src={vl.mainImage.options.source.asset.url}
+              src={vl.mainImage}
               alt=""
               layout="responsive"
-              width="4"
-              height="3"
+              width="2"
+              height="2"
             />
+          </div>
 
-            <h3>BATH THUB</h3>
-
+          <h4>{vl.title}</h4>
         </div>
       );
     });
 
-  return <section>{elem}</section>;
+  return (
+    <section>
+      <div className="container gap-4">{elem}</div>
+    </section>
+  );
 };
 
-export default Homesectionthree
+export default Homesectionthree;

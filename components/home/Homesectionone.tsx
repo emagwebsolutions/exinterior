@@ -22,7 +22,7 @@ const Homesectionone = () => {
       return <div key={k} className="col-2 caption-bx">
         <div>
           <Image
-            src={vl.mainImage.options.source.asset.url}
+            src={vl.mainImage}
             alt=""
             layout="responsive"
             width="2"

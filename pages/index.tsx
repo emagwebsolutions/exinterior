@@ -6,17 +6,16 @@ import { useEffect, useState } from 'react';
 import { setCookie } from 'cookies-next';
 import Homesectionone from 'components/home/Homesectionone';
 import client from '../store/client';
-import imageUrlBuilder from '@sanity/image-url';
+import ImageUrlBuilder from '@sanity/image-url';
 import { projectId, dataset } from '../store/config';
 import Homesectiontwo from 'components/home/Homesectiontwo';
+import Homesectionthree from 'components/home/Homesectionthree';
+import Homesectionfour from 'components/home/Homesectionfour';
 
 const Home: NextPage = () => {
   const { dispatch } = useStore();
 
-  const builder = imageUrlBuilder({
-    projectId,
-    dataset,
-  });
+  const builder = ImageUrlBuilder(client);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +24,6 @@ const Home: NextPage = () => {
         body,
         mainImage{
           asset->{
-            _id,
             url
           }
         },
@@ -36,7 +34,7 @@ const Home: NextPage = () => {
       const data = post.map((v: any) => {
         return {
           ...v,
-          mainImage: builder.image(v.mainImage),
+          mainImage: builder.image(v.mainImage).url(),
         };
       });
 
@@ -48,7 +46,31 @@ const Home: NextPage = () => {
       setCookie('getpost', JSON.stringify(data));
     };
 
+    const fetchProduct = async () => {
+      const post = await client.fetch(`*[_type == 'product']{
+        mainImage,
+        "cat_title": categories[]->title,
+      }`);
+
+      const data = post.map((v: any) => {
+        return {
+          ...v,
+          mainImage: builder.image(v.mainImage),
+        };
+      });
+
+      console.log(data)
+
+      dispatch({
+        type: 'GET_PRODUCT',
+        payload: data,
+      });
+
+      setCookie('getproduct', JSON.stringify(data));
+    };
+
     fetchData();
+    fetchProduct();
   });
 
   return (
@@ -57,10 +79,10 @@ const Home: NextPage = () => {
         <Slider />
         <Nav />
       </section>
-
       <Homesectionone />
-
       <Homesectiontwo />
+      <Homesectionthree />
+      <Homesectionfour />
     </div>
   );
 };

@@ -250,39 +250,26 @@ export const Drainagesystems = () => {
   return (
     <>
       <ul>
-        <li className="col-2">
-          <Link href="">
-            <a>Towel Hanger </a>
-          </Link>
-          <Link href="">
-            <a> Bathroom Hooks</a>
-          </Link>
-          <Link href="">
-            <a>Bath Shelf</a>
-          </Link>
-          <Link href="">
-            <a>Toothbrush Holders</a>
-          </Link>
-        </li>
 
         <li className="col-2">
           <Link href="">
-            <a>Shower Curtains </a>
+            <a>ACO Multiline</a>
           </Link>
           <Link href="">
-            <a>Shower Mat</a>
+            <a> ACO Heavy Duty Channels</a>
           </Link>
           <Link href="">
-            <a>Shower Soap Holder</a>
+            <a>ACO Residential Drainage</a>
           </Link>
           <Link href="">
-            <a>Bathtub Tray</a>
+            <a>ACO Monoblock Systems</a>
           </Link>
         </li>
+
         <li className="col-5">
           <div>
             <Image
-              src="/bathaccess.PNG"
+              src="/monoblock.jpg"
               alt=""
               width="3"
               height="2"

@@ -22,11 +22,11 @@ const Homesectiontwo = () => {
         <div key={k} className="about-us">
           <div className="col-2">
             <Image
-              src={vl.mainImage.options.source.asset.url}
+              src={vl.mainImage}
               alt=""
               layout="responsive"
-              width="4"
-              height="3"
+              width="8"
+              height="7"
             />
           </div>
 
