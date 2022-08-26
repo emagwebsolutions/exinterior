@@ -7,36 +7,36 @@ import { PortableText } from '@portabletext/react';
 const Homesectionfour = () => {
   const { state } = useStore();
 
-//   const [getallPost, setallPost] = useState([]);
+  const [getallPost, setallPost] = useState([]);
 
-//   useEffect(() => {
-//     setallPost(state.getProduct);
-//   }, [state]);
+  useEffect(() => {
+    setallPost(state.getProduct);
+  }, [state]);
 
-//   const elem = Object.values(getallPost)
-//     .filter((v: any) => {
-//       return v.cat_title+'' == 'sanitary';
-//     })
-//     .map((vl: any, k: any) => {
-
-//       return <div key={k} className="col-2 caption-bx">
-//         <div>
-//           <Image
-//             src={vl.mainImage.options.source.asset.url}
-//             alt=""
-//             layout="responsive"
-//             width="2"
-//             height="2"
-//           />
-//         </div>
-//       </div>
-// });
-
-
+  const elem = Object.values(getallPost)
+    .filter((v: any) => {
+      return v.cat_title + '' == 'sanitary';
+    })
+    .slice(0, 6)
+    .map((vl: any, k: any) => {
+      return (
+        <div key={k} className="col-3 caption-bx">
+          <div>
+            <Image
+              src={vl.mainImage}
+              alt=""
+              layout="responsive"
+              width="2"
+              height="2"
+            />
+          </div>
+        </div>
+      );
+    });
 
   return (
     <section>
-          <div className="container"></div>
+      <div className="container">{elem}</div>
     </section>
   );
 };
