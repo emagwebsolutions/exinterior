@@ -6,6 +6,42 @@ import ImageUrlBuilder from '@sanity/image-url';
 
 const builder = ImageUrlBuilder(client);
 
+export const fetchClientele = async (dispatch) => {
+  const post = await client.fetch(`*[_type == 'clientele']{
+    title,
+    mainImage{
+      asset->{
+        url
+      }
+    },
+  }`);
+  const data = post.map((v) => {
+    return {
+      ...v,
+      mainImage: builder.image(v.mainImage).url(),
+    };
+  });
+  dispatch({
+    type: 'GET_CLIENTELE',
+    payload: data,
+  });
+  setCookie('getclientele', JSON.stringify(data));
+};
+
+
+export const fetchPromotion = async (dispatch) => {
+  const post = await client.fetch(`*[_type == 'promotion']{
+    title,
+    body
+  }`);
+
+  dispatch({
+    type: 'GET_PROMOTION',
+    payload: data,
+  });
+  setCookie('getpromotion', JSON.stringify(data));
+};
+
 export const fetchPost = async (dispatch) => {
   const post = await client.fetch(`*[_type == 'post']{
     title,
@@ -72,6 +108,16 @@ const reducer = (state, { type, payload }) => {
         ...state,
         getProduct: state.getProduct ? state.getProduct : payload,
       };
+    case 'GET_CLIENTELE':
+        return {
+          ...state,
+          getClientele: state.getClientele ? state.getClientele : payload,
+    };
+    case 'GET_PROMOTION':
+      return {
+        ...state,
+        getPromotion: state.getPromotion ? state.getPromotion : payload,
+    };
     default:
       return state;
   }
