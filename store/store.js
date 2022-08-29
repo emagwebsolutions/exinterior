@@ -6,6 +6,15 @@ import ImageUrlBuilder from '@sanity/image-url';
 
 const builder = ImageUrlBuilder(client);
 
+export const fetchContacts = async (dispatch) => {
+  const post = await client.fetch(`*[_type == 'contacts']`);
+  dispatch({
+    type: 'GET_CONTACTS',
+    payload: post,
+  });
+  setCookie('getcontacts', JSON.stringify(post));
+};
+
 export const fetchClientele = async (dispatch) => {
   const post = await client.fetch(`*[_type == 'clientele']{
     title,
@@ -28,12 +37,17 @@ export const fetchClientele = async (dispatch) => {
   setCookie('getclientele', JSON.stringify(data));
 };
 
-
 export const fetchPromotion = async (dispatch) => {
   const post = await client.fetch(`*[_type == 'promotion']{
     title,
     body
   }`);
+
+  const data = post.map((v) => {
+    return {
+      ...v,
+    };
+  });
 
   dispatch({
     type: 'GET_PROMOTION',
@@ -94,6 +108,15 @@ const initialState = {
   getProduct: getCookie('getproduct')
     ? JSON.parse(getCookie('getproduct'))
     : '',
+  getPromotion: getCookie('getpromotion')
+    ? JSON.parse(getCookie('getpromotion'))
+    : '',
+  getClientele: getCookie('getclientele')
+    ? JSON.parse(getCookie('getclientele'))
+    : '',
+  getContacts: getCookie('getcontacts')
+    ? JSON.parse(getCookie('getcontacts'))
+    : '',
 };
 
 const reducer = (state, { type, payload }) => {
@@ -109,15 +132,20 @@ const reducer = (state, { type, payload }) => {
         getProduct: state.getProduct ? state.getProduct : payload,
       };
     case 'GET_CLIENTELE':
-        return {
-          ...state,
-          getClientele: state.getClientele ? state.getClientele : payload,
-    };
+      return {
+        ...state,
+        getClientele: state.getClientele ? state.getClientele : payload,
+      };
     case 'GET_PROMOTION':
       return {
         ...state,
         getPromotion: state.getPromotion ? state.getPromotion : payload,
-    };
+      };
+    case 'GET_CONTACTS':
+      return {
+        ...state,
+        getContacts: state.getContacts ? state.getContacts : payload,
+      };
     default:
       return state;
   }

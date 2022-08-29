@@ -1,7 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
+import { useStore } from 'store/store.js';
+import { useEffect, useState } from 'react';
 
 const FooterMiddle = () => {
+  const { state } = useStore();
+
+  const [getContact, setallContacts] = useState([]);
+
+  useEffect(() => {
+    setallContacts(state.getContacts);
+  }, [state]);
+
+  const val = Object.values(getContact).reduce((a: any, b) => b, {});
+
   return (
     <section>
       <div className="container">
@@ -23,16 +35,15 @@ const FooterMiddle = () => {
           <ul>
             <li>
               <i className="fa fa-phone"></i>
-              +233 54 372 5401
+              {val.phone1}
             </li>
             <li>
-              <i className="fa fa-map-marker">
-                {' '}
-                Plot #, 34, Spintex Rd, Accra, Ghana
-              </i>
+              <i className="fa fa-map-marker"></i>
+              {val.location}
             </li>
             <li>
-              <i className="fa fa-envelope"></i>info@ex-interiordesignltd.com
+              <i className="fa fa-envelope"></i>
+              {val.email1}
             </li>
           </ul>
         </div>

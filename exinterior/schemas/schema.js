@@ -11,6 +11,7 @@ import post from './post';
 import product from './product';
 import clientele from './clientele';
 import promotion from './promotion';
+import contact from './contact';
 import author from './author';
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -29,6 +30,7 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     blockContent,
     product,
+    contact,
     clientele,
     promotion,
   ]),

@@ -12,7 +12,7 @@
       height: 5rem;
       padding: 1em;
       margin-inline: auto;
-      margin-bottom: .5em;
+      margin-bottom: 0.5em;
       border: solid 0.1rem white;
       border-radius: 50%;
       display: flex;
@@ -69,6 +69,7 @@
         margin-top: 2em;
         font-size: 1.6rem;
         line-height: 2.5rem;
+        padding-left: 0 !important;
         li {
           a {
             color: white;
@@ -99,9 +100,9 @@
     padding-block: 2em;
     width: 100vw;
     text-align: center;
-p{
-    color: white;
-    font-size: 1.4rem;
-}
+    p {
+      color: white;
+      font-size: 1.4rem;
+    }
   }
 }

@@ -5,10 +5,10 @@ export const Pages = () => {
   return (
     <ul>
       <li className="col-2">
-        <Link href="">
+        <Link href="/about">
           <a>About Us</a>
         </Link>
-        <Link href="">
+        <Link href="/contact">
           <a>Contact Us</a>
         </Link>
       </li>

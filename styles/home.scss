@@ -165,7 +165,7 @@
     position: relative;
     padding-top: 2em;
     z-index: 1;
-    .container{
+    .container {
       z-index: 3;
       color: white;
     }
@@ -177,6 +177,23 @@
       position: absolute;
       top: 0;
       left: 0;
+    }
+    .promotion {
+      max-width: 50rem;
+      margin-inline: auto;
+      h4 {
+        background-color: white;
+        color: black();
+        padding: 1em;
+        font-size: 2rem;
+        text-align: center;
+      }
+      div {
+        p {
+          text-align: center;
+          color: white;
+        }
+      }
     }
   }
 
