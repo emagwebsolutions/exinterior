@@ -4,7 +4,8 @@ import { PortableText } from '@portabletext/react';
 import { useStore } from 'store/store';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Testimonials from 'components/Testimonials';
+import Testimonials from 'components/about/Testimonials';
+import Teamsection from 'components/about/Teamsection';
 
 const About = () => {
   const { state } = useStore();
@@ -48,6 +49,7 @@ const About = () => {
       <Pageheader parent="Home" child="About" page="About" />
       <section>{elem}</section>
       <Testimonials />
+      <Teamsection />
     </div>
   );
 };

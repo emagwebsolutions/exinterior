@@ -13,6 +13,7 @@ import clientele from './clientele';
 import promotion from './promotion';
 import contact from './contact';
 import author from './author';
+import testimonial from './testimonial'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -33,5 +34,6 @@ export default createSchema({
     contact,
     clientele,
     promotion,
+    testimonial,
   ]),
 });

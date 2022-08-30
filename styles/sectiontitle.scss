@@ -1,11 +1,13 @@
 .sectiontitle {
   background-color: danger();
   width: 30rem;
-  padding: 1.3em;
-  margin-block: 1.2em;
-  margin-inline: auto; 
+  margin-top: 2em;
+  margin-bottom: 4em;
+  margin-inline: auto;
   h3 {
-    color: white;
+    color: white !important;
     font-size: 2rem;
+    text-align: center;
+    padding: .6em;
   }
 }
