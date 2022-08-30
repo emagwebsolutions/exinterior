@@ -39,6 +39,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'workinghours',
+      title: 'Working Hours',
+      type: 'string'
+    },
+    {
       name: 'twitter',
       title: 'Twitter',
       type: 'string'

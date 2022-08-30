@@ -1,8 +1,23 @@
 import Nav from 'components/nav/Nav';
 import Pageheader from 'components/Pageheader';
 import Map from 'components/Map';
+import Contactbox from 'components/contact/Contactbox';
+import { useStore } from 'store/store.js';
+import { useEffect, useState } from 'react';
+import Contactform from 'components/contact/Contactform';
 
 const Contact = () => {
+
+  const { state } = useStore();
+
+  const [getContact, setallContacts] = useState([]);
+
+  useEffect(() => {
+    setallContacts(state.getContacts);
+  }, [state]);
+
+  const val = Object.values(getContact).reduce((a: any, b) => b, {});
+
   return (
     <div className="contact">
       <section>
@@ -22,22 +37,21 @@ const Contact = () => {
       </section>
 
       <section className="contact-box">
-        <div className="container">
-          <div className="col-2">
-            <div>
-              <i className="fa fa-phone"></i>
-              <h3>TALK TO US</h3>
-              <h4></h4>
-            </div>
-          </div>
-          <div className="col-2">
-            <div>
-              <i className="fa fa-phone"></i>
-              <h3>CONTACT US</h3>
-              <h4></h4>
-            </div>
-          </div>
+        <div className="container gap-2">
+          <Contactbox title="TALK TO US" text={val.phone1} icon="fa-phone" />
+          <Contactbox title="CONTACT US" text={val.email1} icon="fa-envelope" />
         </div>
+
+        <div className="container gap-2">
+          <Contactbox title="LOCATION" text={val.location} icon="fa-map-marker" />
+          <Contactbox title="OPENING HOURS" text={val.workinghours} icon="fa-clock-o" />
+        </div>
+
+
+          <Contactform />
+
+
+
       </section>
     </div>
   );

@@ -1,5 +1,36 @@
 .contact{
 .contact-box{
     padding: 5em;
+    .container{
+        .col-2{
+            div{
+                text-align: center;
+                border: solid .1rem danger();
+                margin-bottom: 2em; 
+                padding: 3em;
+                .fa{
+                    width: 6rem;
+                    height: 6rem;
+                    background-color: danger();
+                    border-radius: 50%;
+                    display: flex; 
+                    align-items: center;
+                    justify-content: center;
+                    margin-inline: auto;
+                    color: white; 
+                    font-size: 2rem;
+                }
+                h3{
+                    font-size: 2rem!important;
+                    color: black(.7);
+                }
+                h4{
+                    font-size: 1.6rem!important;
+                    color: black(.7);
+                }
+            }
+
+        }
+    }
 }
 }

@@ -127,7 +127,7 @@
     .prodcat {
       z-index: 3;
       div {
-        width: 13rem;
+        width: clamp(120px, 1.3vw, 13rem);
         margin-inline: auto;
         border: solid 0.7rem danger();
         border-radius: 50%;
