@@ -1,0 +1,13 @@
+.about{
+
+    .about-content{
+        display: flex; 
+        flex-wrap: wrap;
+        & > div:nth-of-type(2){
+            padding: 3em;
+            
+        }
+
+    }
+
+}
