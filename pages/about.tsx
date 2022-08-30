@@ -47,7 +47,7 @@ const About = () => {
         <Nav />
       </section>
       <Pageheader parent="Home" child="About" page="About" />
-      <section>{elem}</section>
+      <section className="about-info">{elem}</section>
       <Testimonials />
       <Teamsection />
     </div>

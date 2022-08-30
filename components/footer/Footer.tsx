@@ -10,6 +10,8 @@ import {
   fetchClientele,
   fetchContacts,
   useStore,
+  fetchTestimonials,
+  fetchTeamsection,
 } from '../../store/store';
 
 const Footer = () => {
@@ -21,7 +23,9 @@ const Footer = () => {
     fetchProduct(dispatch);
     fetchPromotion(dispatch);
     fetchClientele(dispatch);
-  },[dispatch]);
+    fetchTestimonials(dispatch);
+    fetchTeamsection(dispatch);
+  }, [dispatch]);
 
   return (
     <div className="footer">

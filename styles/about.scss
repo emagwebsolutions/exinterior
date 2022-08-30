@@ -1,9 +1,13 @@
-.about {
+.about-info {
   .about-content {
     display: flex;
     flex-wrap: wrap;
-    & > div:nth-of-type(2) {
+    div {
+      flex: 10rem 1 1;
+    }
+    div:nth-last-of-type(1){
       padding: 3em;
+      line-height: 2.4rem;
     }
   }
 }

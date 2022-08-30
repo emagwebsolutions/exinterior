@@ -6,6 +6,53 @@ import ImageUrlBuilder from '@sanity/image-url';
 
 const builder = ImageUrlBuilder(client);
 
+export const fetchTestimonials = async (dispatch) => {
+  const post = await client.fetch(`*[_type == 'testimonial']{
+    name,
+    title,
+    body,
+    mainImage{
+      asset->{
+        url
+      }
+    }
+  }`);
+  const data = post.map((v) => {
+    return {
+      ...v,
+      mainImage: builder.image(v.mainImage).url(),
+    };
+  });
+  dispatch({
+    type: 'GET_TESTIMONIALS',
+    payload: data,
+  });
+  setCookie('gettestimonials', JSON.stringify(data));
+};
+
+export const fetchTeamsection = async (dispatch) => {
+  const post = await client.fetch(`*[_type == 'teamsection']{
+    name,
+    title,
+    mainimage{
+      asset->{
+        url
+      }
+    }
+  }`);
+  const data = post.map((v) => {
+    return {
+      ...v,
+      mainImage: builder.image(v.mainimage).url(),
+    };
+  });
+  dispatch({
+    type: 'GET_TEAMSECTION',
+    payload: data,
+  });
+  setCookie('getteamsection', JSON.stringify(data));
+};
+
 export const fetchContacts = async (dispatch) => {
   const post = await client.fetch(`*[_type == 'contacts']`);
   dispatch({
@@ -117,6 +164,12 @@ const initialState = {
   getContacts: getCookie('getcontacts')
     ? JSON.parse(getCookie('getcontacts'))
     : '',
+  getTestimonials: getCookie('gettestimonials')
+    ? JSON.parse(getCookie('gettestimonials'))
+    : '',
+  getTeamsection: getCookie('getteamsection')
+    ? JSON.parse(getCookie('getteamsection'))
+    : '',
 };
 
 const reducer = (state, { type, payload }) => {
@@ -145,6 +198,18 @@ const reducer = (state, { type, payload }) => {
       return {
         ...state,
         getContacts: state.getContacts ? state.getContacts : payload,
+      };
+    case 'GET_TESTIMONIALS':
+      return {
+        ...state,
+        getTestimonials: state.getTestimonials
+          ? state.getTestimonials
+          : payload,
+      };
+    case 'GET_TEAMSECTION':
+      return {
+        ...state,
+        getTeamsection: state.getTeamsection ? state.getTeamsection : payload,
       };
     default:
       return state;
