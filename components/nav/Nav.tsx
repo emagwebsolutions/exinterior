@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { useState } from 'react';
 
 import {
   Pages,
@@ -10,17 +10,16 @@ import {
   Showers,
   Bathroomfurniture,
   Bathroomaccessories,
-  Drainagesystems
+  Drainagesystems,
 } from './MenuLinks';
+import Hamburger from './Hamburger';
 
 const Nav = () => {
-
-
+  const [navslide, setNavslide] = useState('');
 
   return (
     <nav>
-
-      <div className="container">
+      <div className={navslide}>
         <div className="col-1">
           <Link href="/">
             <a>
@@ -39,7 +38,7 @@ const Nav = () => {
         <div className="col-7">
           <ul>
             <li>
-              <Link href="">
+              <Link href="/">
                 <a>Home</a>
               </Link>
             </li>
@@ -105,6 +104,8 @@ const Nav = () => {
           </div>
         </div>
       </div>
+
+      <Hamburger setNavslide={setNavslide} />
     </nav>
   );
 };

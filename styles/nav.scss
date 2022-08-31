@@ -3,6 +3,9 @@
     width: 100vw;
     padding: 1em;
     background-color: white(0.7);
+    .hamburger {
+      display: none;
+    }
     div {
       div:nth-of-type(2) {
         display: flex;
@@ -146,52 +149,83 @@
 @media (max-width: 35em) {
   nav {
     position: relative;
+
     .container {
+      transition: 0.2s ease-in;
       width: calc(100vw - 50px);
       height: 100vh;
       background-color: white;
-      z-index: 2;
-      position: absolute;
+      z-index: 999999;
+      position: fixed;
       left: 0;
       top: 0;
+
       div:nth-of-type(2) {
         display: flex;
         flex-direction: column;
         padding: 1.5em;
+        overflow: scroll;
+        height: 100vh;
+        padding-bottom: 12rem;
+
         & > ul {
           display: flex;
           flex-direction: column;
           margin-left: 0;
           padding-left: 0;
+
+          & > li:nth-of-type(2) > a,
+          & > li:nth-of-type(3) > a,
+          & > li:nth-of-type(4) > a,
+          & > li:nth-of-type(5) > a,
+          & > li:nth-of-type(6) > a,
+          & > li:nth-of-type(7) > a,
+          & > li:nth-of-type(8) > a {
+            position: relative;
+            &::after {
+              content: '^';
+              position: absolute;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+              font-size: 1.4rem;
+              transform: rotateX(180deg);
+            }
+          }
+
           & > li {
             width: 100%;
-            padding: .3em;
+            padding: 0.3em;
             font-size: 1.6rem;
-   margin-bottom: 1.6rem;
-            & > a{
+            margin-bottom: 1.6rem;
+
+            &:hover > ul {
+              display: block !important;
+            }
+
+            & > a {
               display: block;
               width: 100%;
               font-size: 1.6rem;
               text-transform: uppercase;
               line-height: 2.5rem;
               text-decoration: none;
+              font-weight: 900;
             }
+
             div {
               visibility: hidden;
-              height: 0!important;
+              height: 0 !important;
             }
-            ul{
-              padding-left: 0!important;
+            ul {
+              padding-left: 0 !important;
               margin-left: 0;
-              background-color: yellow;
-              a{
+              display: none;
+              a {
                 display: block;
                 width: 100%;
                 font-size: 1.6rem;
                 text-transform: uppercase;
                 line-height: 2.5rem;
                 text-decoration: none;
-                color: red;
               }
             }
           }
