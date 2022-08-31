@@ -1,35 +1,76 @@
-.testimonials {
-  padding: 3em;
-  background-color: muted(0.2);
-  text-align: center;
-  .test-box {
-    min-height: 30rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .test-img-bx {
-      margin-inline: auto;
-      width: 10rem;
-      height: 10rem;
-      overflow: hidden;
-      border: solid .3rem danger();
-      margin-top: 4em;
-      margin-bottom: 3em;
-      border-radius: 50%;
+@media(min-width: 35em){
+  .testimonials {
+    padding: 3em;
+    background-color: muted(0.2);
+    text-align: center;
+    .test-box {
+      min-height: 30rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .test-img-bx {
+        margin-inline: auto;
+        width: 10rem;
+        height: 10rem;
+        overflow: hidden;
+        border: solid .3rem danger();
+        margin-top: 4em;
+        margin-bottom: 3em;
+        border-radius: 50%;
+      }
+      .para{
+          font-size: 1.6rem;
+          max-width: 70rem;
+          line-height: 3rem;
+          color: black(.5);
+      }
+      h3{
+          color: black(.5);
+          line-height: .1rem;
+      }
+      h4{
+          color: black(.5);
+          font-size: 1.4rem;
+      }
     }
-    .para{
-        font-size: 1.6rem;
-        max-width: 70rem;
-        line-height: 3rem;
-        color: black(.5);
-    }
-    h3{
-        color: black(.5);
-        line-height: .1rem;
-    }
-    h4{
-        color: black(.5);
-        font-size: 1.4rem;
+  }
+}
+
+
+@media(max-width: 35em){
+  .testimonials {
+    padding: 3em;
+    background-color: muted(0.2);
+    text-align: center;
+    .test-box {
+      min-height: 30rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .test-img-bx {
+        margin-inline: auto;
+        width: 10rem;
+        height: 10rem;
+        overflow: hidden;
+        border: solid .3rem danger();
+        margin-top: 4em;
+        margin-bottom: 3em;
+        border-radius: 50%;
+      }
+      .para{
+          font-size: 1.6rem;
+          max-width: 70rem;
+          line-height: 3rem;
+          color: black(.5);
+      }
+      h3{
+          color: black(.5);
+          line-height: .1rem;
+      }
+      h4{
+          color: black(.5);
+          font-size: 1.4rem;
+      }
     }
   }
 }

@@ -1,12 +1,35 @@
-.teamsection {
-  background-color: white;
-  padding: 3em;
-  text-align: center;
-  h4 {
-    font-size: 1.5rem;
-    color: black(0.7);
+@media (min-width: 35em) {
+  .teamsection {
+    background-color: white;
+    padding: 3em;
+    text-align: center;
+    h4 {
+      font-size: 1.5rem;
+      color: black(0.7);
+    }
+    h3 {
+      color: black(0.7);
+    }
   }
-  h3 {
-    color: black(0.7);
+}
+
+@media (max-width: 35em) {
+  .teamsection {
+    background-color: white;
+    padding: 3em;
+    text-align: center;
+    h4 {
+      font-size: 1.5rem;
+      color: black(0.7);
+    }
+    h3 {
+      color: black(0.7);
+    }
+
+    .container{
+      div{
+        flex: 30rem 1 1;
+      }
+    }
   }
 }

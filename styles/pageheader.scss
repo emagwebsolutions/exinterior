@@ -1,11 +1,32 @@
-.pageheader{
-    background-color: muted(.2);
-    padding: 3em;
-    h3{
-        text-align: center;
+
+
+@media(min-width: 35em){
+    .pageheader{
+        background-color: muted(.2);
+        padding: 3em;
+        h3{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            font-size: 1.4rem;
+        }
     }
-    p{
-        text-align: center;
-        font-size: 1.4rem;
+
+}
+
+@media(max-width: 35em){
+    .pageheader{
+        background-color: muted(.2);
+        padding: 3em;
+        margin-top: 4rem;
+        h3{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            font-size: 1.4rem;
+        }
     }
+    
 }

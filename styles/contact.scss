@@ -1,36 +1,91 @@
-.contact{
-.contact-box{
-    padding: 5em;
-    .container{
-        .col-2{
-            div{
-                text-align: center;
-                border: solid .1rem danger();
-                margin-bottom: 2em; 
-                padding: 3em;
-                .fa{
-                    width: 6rem;
-                    height: 6rem;
-                    background-color: danger();
-                    border-radius: 50%;
-                    display: flex; 
-                    align-items: center;
-                    justify-content: center;
-                    margin-inline: auto;
-                    color: white; 
-                    font-size: 2rem;
-                }
-                h3{
-                    font-size: 2rem!important;
-                    color: black(.7);
-                }
-                h4{
-                    font-size: 1.6rem!important;
-                    color: black(.7);
-                }
-            }
-
-        }
+@media (min-width: 35em) {
+  .contact {
+    section:nth-of-type(1) {
+      nav {
+        position: fixed;
+        top: 0;
+        z-index: 9;
+      }
     }
+    .contact-box {
+      padding: 5em;
+      .container {
+        .col-2 {
+          div {
+            text-align: center;
+            border: solid 0.1rem danger();
+            margin-bottom: 2em;
+            padding: 3em;
+            .fa {
+              width: 6rem;
+              height: 6rem;
+              background-color: danger();
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-inline: auto;
+              color: white;
+              font-size: 2rem;
+            }
+            h3 {
+              font-size: 2rem !important;
+              color: black(0.7);
+            }
+            h4 {
+              font-size: 1.6rem !important;
+              color: black(0.7);
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
+@media (max-width: 35em) {
+  .contact {
+    section:nth-of-type(1) {
+      nav {
+        position: fixed;
+        top: 0;
+        z-index: 9;
+      }
+    }
+    .contact-box {
+      padding: 2em;
+      .container {
+        .col-2 {
+          div {
+            text-align: center;
+            border: solid 0.1rem danger();
+            margin-bottom: 2em;
+            padding: 3em;
+            .fa {
+              width: 6rem;
+              height: 6rem;
+              background-color: danger();
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-inline: auto;
+              color: white;
+              font-size: 2rem;
+            }
+            h3 {
+              font-size: 2rem !important;
+              color: black(0.7);
+              
+            }
+            h4 {
+              font-size: 1.6rem !important;
+              color: black(0.7);
+              line-height: 2.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }

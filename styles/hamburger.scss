@@ -1,4 +1,4 @@
-nav {
+@media(max-width: 35em){
   .hamburger {
     display: block;
     position: absolute;
@@ -36,4 +36,7 @@ nav {
   .container.close {
     transform: translateX(-100%);
   }
+
+
 }
+
