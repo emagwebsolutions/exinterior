@@ -5,7 +5,7 @@ const Product = ()=>{
   const router = useRouter()
   return (
     <>
-    {router.query}
+    PRODUCT PAGE
     </>
   )
 }

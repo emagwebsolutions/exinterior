@@ -1,141 +1,199 @@
-nav {
-  width: 100vw;
-  padding: 1em;
-  background-color: white(0.7);
-  div {
-    div:nth-of-type(2) {
-      display: flex;
-      align-items: center;
-      & > ul {
+@media (min-width: 35em) {
+  nav {
+    width: 100vw;
+    padding: 1em;
+    background-color: white(0.7);
+    div {
+      div:nth-of-type(2) {
         display: flex;
-        position: relative;
         align-items: center;
-        & > li:nth-of-type(2) > a,
-        & > li:nth-of-type(3) > a,
-        & > li:nth-of-type(4) > a,
-        & > li:nth-of-type(5) > a,
-        & > li:nth-of-type(6) > a,
-        & > li:nth-of-type(7) > a,
-        & > li:nth-of-type(8) > a
-        {
+        & > ul {
+          display: flex;
           position: relative;
-          &::after {
-            content: '^';
-            position: absolute;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 0.9rem;
-            transform: rotateX(180deg);
-          }
-        }
-
-        & > li:not(:last-child) {
-    
-          & > a {
-            display: block;
-            padding-left: clamp(.3em,2vw,2.5em);
+          align-items: center;
+          & > li:nth-of-type(2) > a,
+          & > li:nth-of-type(3) > a,
+          & > li:nth-of-type(4) > a,
+          & > li:nth-of-type(5) > a,
+          & > li:nth-of-type(6) > a,
+          & > li:nth-of-type(7) > a,
+          & > li:nth-of-type(8) > a {
             position: relative;
-            text-decoration: none;
-            font-size: clamp(8px, 0.8vw, 1.2rem);
-            color: black();
-            font-weight: bold;
-            position: relative;
-            text-transform: uppercase;
+            &::after {
+              content: '^';
+              position: absolute;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+              font-size: 0.9rem;
+              transform: rotateX(180deg);
+            }
           }
 
-          &:hover ul {
-            visibility: visible;
-          }
+          & > li:not(:last-child) {
+            & > a {
+              display: block;
+              padding-left: clamp(0.3em, 2vw, 2.5em);
+              position: relative;
+              text-decoration: none;
+              font-size: clamp(8px, 0.8vw, 1.2rem);
+              color: black();
+              font-weight: bold;
+              position: relative;
+              text-transform: uppercase;
+            }
 
-          ul {
-            width: 100%;
-            display: flex;
-            position: absolute;
-            visibility: hidden;
-            left: 0;
-            background-color: white;
-            padding: 1.4em;
-            box-shadow: 0.5rem 0.5rem 0.5rem 0.6rem muted(0.2);
-            gap: 1em;
-            li {
-              flex: 4rem 1 1;
-              a {
-                display: block;
-                line-height: 2em;
-                text-decoration: none;
-                font-size: clamp(10px, 1.2vw, 1.2rem);
-                color: black;
+            &:hover ul {
+              visibility: visible;
+            }
+
+            ul {
+              width: 100%;
+              display: flex;
+              position: absolute;
+              visibility: hidden;
+              left: 0;
+              background-color: white;
+              padding: 1.4em;
+              box-shadow: 0.5rem 0.5rem 0.5rem 0.6rem muted(0.2);
+              gap: 1em;
+              li {
+                flex: 4rem 1 1;
+                a {
+                  display: block;
+                  line-height: 2em;
+                  text-decoration: none;
+                  font-size: clamp(10px, 1.2vw, 1.2rem);
+                  color: black;
+                }
               }
             }
           }
-        }
 
-        & > li:last-child {
-          gap: 1em;
-          position: relative;
-          & > a {
-            display: block;
-            padding-left: clamp(.3em,2vw,2.5em);
-            padding-right: 3rem;
-            font-weight: bold;
+          & > li:last-child {
+            gap: 1em;
             position: relative;
-            text-decoration: none;
-            font-size: clamp(8px, 0.8vw, 1.2rem);
-            text-transform: uppercase;
-            font-weight: bold;
-            color: black();
-          }
+            & > a {
+              display: block;
+              padding-left: clamp(0.3em, 2vw, 2.5em);
+              padding-right: 3rem;
+              font-weight: bold;
+              position: relative;
+              text-decoration: none;
+              font-size: clamp(8px, 0.8vw, 1.2rem);
+              text-transform: uppercase;
+              font-weight: bold;
+              color: black();
+            }
 
-          &:hover ul {
-            visibility: visible;
-          }
+            &:hover ul {
+              visibility: visible;
+            }
 
-          ul {
-            width: 17rem;
-            position: absolute;
-            visibility: hidden;
-            left: 0;
-            background-color: white;
-            padding: 1.4em;
-            box-shadow: 0.2rem 0.2rem 0.2rem 0.3rem muted(0.2);
-            li {
-              flex: 4rem 1 1;
-              a {
-                display: block;
-                line-height: 2em;
-                text-decoration: none;
-                font-size: clamp(9px, 1.1vw, 1.6rem);
+            ul {
+              width: 17rem;
+              position: absolute;
+              visibility: hidden;
+              left: 0;
+              background-color: white;
+              padding: 1.4em;
+              box-shadow: 0.2rem 0.2rem 0.2rem 0.3rem muted(0.2);
+              li {
+                flex: 4rem 1 1;
+                a {
+                  display: block;
+                  line-height: 2em;
+                  text-decoration: none;
+                  font-size: clamp(9px, 1.1vw, 1.6rem);
+                }
               }
             }
           }
         }
       }
-    }
 
-    div:nth-of-type(3) {
-      display: flex;
-      align-items: center;
-
-      div {
+      div:nth-of-type(3) {
         display: flex;
-        gap: 1.5rem;
-        font-size: clamp(9px, 1.4vw, 1.6rem);
-        .fa-shopping-basket {
-          position: relative;
-          span {
-            position: absolute;
-            top: -2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: black;
-            max-width: 1.6rem;
-            max-height: 1.6rem;
-            padding: 1em;
-            color: white;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        align-items: center;
+
+        div {
+          display: flex;
+          gap: 1.5rem;
+          font-size: clamp(9px, 1.4vw, 1.6rem);
+          .fa-shopping-basket {
+            position: relative;
+            span {
+              position: absolute;
+              top: -2rem;
+              left: 50%;
+              transform: translateX(-50%);
+              background-color: black;
+              max-width: 1.6rem;
+              max-height: 1.6rem;
+              padding: 1em;
+              color: white;
+              border-radius: 50%;
+              font-size: 1.2rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 35em) {
+  nav {
+    position: relative;
+    .container {
+      width: calc(100vw - 50px);
+      height: 100vh;
+      background-color: white;
+      z-index: 2;
+      position: absolute;
+      left: 0;
+      top: 0;
+      div:nth-of-type(2) {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5em;
+        & > ul {
+          display: flex;
+          flex-direction: column;
+          margin-left: 0;
+          padding-left: 0;
+          & > li {
+            width: 100%;
+            padding: .3em;
+            font-size: 1.6rem;
+   margin-bottom: 1.6rem;
+            & > a{
+              display: block;
+              width: 100%;
+              font-size: 1.6rem;
+              text-transform: uppercase;
+              line-height: 2.5rem;
+              text-decoration: none;
+            }
+            div {
+              visibility: hidden;
+              height: 0!important;
+            }
+            ul{
+              padding-left: 0!important;
+              margin-left: 0;
+              background-color: yellow;
+              a{
+                display: block;
+                width: 100%;
+                font-size: 1.6rem;
+                text-transform: uppercase;
+                line-height: 2.5rem;
+                text-decoration: none;
+                color: red;
+              }
+            }
           }
         }
       }
