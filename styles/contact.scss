@@ -1,12 +1,6 @@
 @media (min-width: 35em) {
   .contact {
-    section:nth-of-type(1) {
-      nav {
-        position: fixed;
-        top: 0;
-        z-index: 9;
-      }
-    }
+
     .contact-box {
       padding: 5em;
       .container {

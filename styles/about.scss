@@ -5,13 +5,6 @@
 
   .about {
     position: relative;
-    section:nth-of-type(1) {
-      nav {
-        position: fixed;
-        top: 0;
-        z-index: 9;
-      }
-    }
     .about-info {
       .about-content {
         display: flex;

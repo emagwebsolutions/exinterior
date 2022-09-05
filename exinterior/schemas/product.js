@@ -9,6 +9,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'string',
+    },
+    {
       name: 'size',
       title: 'Size',
       type: 'string',
@@ -73,7 +78,7 @@ export default {
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'category' } }],
+      of: [{ type: 'reference', to: { type: 'productcategory' } }],
     },
     {
       name: 'body',

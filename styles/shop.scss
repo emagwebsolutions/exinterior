@@ -1,0 +1,48 @@
+.shop {
+  .category {
+    background-color: danger();
+    color: white;
+    font-size: 1.8rem;
+    padding: 1.2rem;
+    border-radius: 2em;
+    margin-block: 2em;
+  }
+
+  .sort-wrapper {
+    display: flex;
+    gap: 2rem;
+    div:nth-of-type(1) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    h3 {
+      font-size: 1.6rem;
+    }
+    .sort {
+      background-color: primary();
+      width: 100%;
+      color: white;
+      font-size: 1.6rem;
+      padding: 0.9rem;
+      border-radius: 2em;
+      margin-block: 2em;
+    }
+  }
+
+  .category-links{
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 1.6rem;
+    line-height: 3.5rem;
+    a{
+        display: flex; 
+        gap: 1rem;
+        text-decoration: none; 
+        align-items: center;
+        .fa{
+            color: danger();
+        }
+    }
+  }
+}

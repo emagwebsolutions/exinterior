@@ -44,7 +44,7 @@ const Nav = () => {
             </li>
 
             <li>
-              <Link href="/shop/3">
+              <Link href="/shop/sanitary">
                 <a>Sanitary</a>
               </Link>
               <Sanitary />

@@ -1,8 +1,9 @@
 @media(max-width: 35em){
   .hamburger {
     display: block;
-    position: absolute;
+    position: fixed;
     height: 5rem;
+    top: 0;
     z-index: 9999999;
     .display-hamburger {
       padding: 0.7em;
