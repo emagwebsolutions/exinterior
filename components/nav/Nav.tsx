@@ -3,16 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState,useEffect } from 'react';
 import { useStore } from '../../store/store';
-
-import {
-  Pages,
-  Sanitary,
-  Faucets,
-  Showers,
-  Bathroomfurniture,
-  Bathroomaccessories,
-  Drainagesystems,
-} from './MenuLinks';
+import Pages from './Pages'
+import Sanitary  from './Sanitary'
+import Faucets  from './Faucets'
+import Showers  from './Showers'
+import Bathroomfurniture  from './Bathroomfurniture'
+import Bathroomaccessories  from './Bathroomaccessories'
+import Drainagesystems  from './Drainagesystems'
 import Hamburger from './Hamburger';
 
 const Nav = () => {
