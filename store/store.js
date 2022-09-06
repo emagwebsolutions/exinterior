@@ -6,6 +6,38 @@ import ImageUrlBuilder from '@sanity/image-url';
 
 const builder = ImageUrlBuilder(client);
 
+export const fetchBrand = async (dispatch) => {
+  const post = await client.fetch(`*[_type == 'brand']{
+    companyname,
+    tags,
+    mainImage{
+      asset->{
+        url
+      }
+    }
+  }`);
+
+  const data = post.map((v) => {
+    return {
+      ...v,
+      mainImage: builder.image(v.mainImage).url(),
+    };
+  });
+
+  const obj = {
+    companyname: data[0].companyname,
+    tags: data[0].tags, 
+    logo: data[0].mainImage
+  }
+
+
+  dispatch({
+    type: 'GET_BRAND',
+    payload: data
+  });
+  setCookie('getbrand', JSON.stringify(data));
+};
+
 export const fetchTestimonials = async (dispatch) => {
   const post = await client.fetch(`*[_type == 'testimonial']{
     name,
@@ -137,6 +169,7 @@ export const fetchProduct = async (dispatch) => {
     },
     "cat_title": categories[]->title,
   }`);
+
   const data = post.map((v) => {
     return {
       ...v,
@@ -170,6 +203,7 @@ const initialState = {
   getTeamsection: getCookie('getteamsection')
     ? JSON.parse(getCookie('getteamsection'))
     : '',
+  getBrand: getCookie('getbrand') ? JSON.parse(getCookie('getbrand')) : '',
 };
 
 const reducer = (state, { type, payload }) => {
@@ -211,6 +245,11 @@ const reducer = (state, { type, payload }) => {
         ...state,
         getTeamsection: state.getTeamsection ? state.getTeamsection : payload,
       };
+      case 'GET_BRAND':
+        return {
+          ...state,
+          getBrand: state.getBrand ? state.getBrand : payload,
+        };
     default:
       return state;
   }

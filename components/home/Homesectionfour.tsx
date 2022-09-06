@@ -15,7 +15,7 @@ const Homesectionfour = () => {
 
   const elem = Object.values(getallPost)
     .filter((v: any) => {
-      return v.cat_title + '' == 'sanitary';
+      return v.cat_title + '' == 'Sanitary';
     })
     .slice(0, 6)
     .map((vl: any, k: any) => {

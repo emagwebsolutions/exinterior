@@ -12,6 +12,7 @@ import {
   useStore,
   fetchTestimonials,
   fetchTeamsection,
+  fetchBrand,
 } from '../../store/store';
 
 const Footer = () => {
@@ -25,6 +26,7 @@ const Footer = () => {
     fetchClientele(dispatch);
     fetchTestimonials(dispatch);
     fetchTeamsection(dispatch);
+    fetchBrand(dispatch);
   }, [dispatch]);
 
   return (

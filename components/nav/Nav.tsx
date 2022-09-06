@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import { useStore } from '../../store/store';
 
 import {
   Pages,
@@ -17,6 +18,18 @@ import Hamburger from './Hamburger';
 const Nav = () => {
   const [navslide, setNavslide] = useState('');
 
+  
+  const [brand, setBrand] = useState([]);
+
+  const { state } = useStore();
+
+  useEffect(() => {
+    setBrand(state.getBrand);
+  }, [state]);
+
+  const val = Object.values(brand).reduce((a: any, b) => b, {});
+
+
   return (
     <nav>
       <div className={navslide}>
@@ -24,7 +37,7 @@ const Nav = () => {
           <Link href="/">
             <a>
               <Image
-                src="/logo.PNG"
+                src={val.mainImage}
                 alt="Logo"
                 layout="responsive"
                 width="3"
