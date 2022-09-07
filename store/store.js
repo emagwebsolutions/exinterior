@@ -26,14 +26,13 @@ export const fetchBrand = async (dispatch) => {
 
   const obj = {
     companyname: data[0].companyname,
-    tags: data[0].tags, 
-    logo: data[0].mainImage
-  }
-
+    tags: data[0].tags,
+    logo: data[0].mainImage,
+  };
 
   dispatch({
     type: 'GET_BRAND',
-    payload: data
+    payload: data,
   });
   setCookie('getbrand', JSON.stringify(data));
 };
@@ -162,6 +161,21 @@ export const fetchPost = async (dispatch) => {
 
 export const fetchProduct = async (dispatch) => {
   const post = await client.fetch(`*[_type == 'product']{
+    name,
+    excerpt,
+    size,
+    colour,
+    material,
+    brand,
+    "slug": slug.current,
+    producttype,
+    availability,
+    price,
+    imagesGallery,
+    body,
+    rating,
+    numReviews,
+    countInStock,
     mainImage{
       asset->{
         url
@@ -176,6 +190,7 @@ export const fetchProduct = async (dispatch) => {
       mainImage: builder.image(v.mainImage).url(),
     };
   });
+
   dispatch({
     type: 'GET_PRODUCT',
     payload: data,
@@ -245,11 +260,11 @@ const reducer = (state, { type, payload }) => {
         ...state,
         getTeamsection: state.getTeamsection ? state.getTeamsection : payload,
       };
-      case 'GET_BRAND':
-        return {
-          ...state,
-          getBrand: state.getBrand ? state.getBrand : payload,
-        };
+    case 'GET_BRAND':
+      return {
+        ...state,
+        getBrand: state.getBrand ? state.getBrand : payload,
+      };
     default:
       return state;
   }

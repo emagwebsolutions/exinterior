@@ -1,32 +1,39 @@
-import React from 'react'
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { useStore } from 'store/store';
 
 export const Sanitary = () => {
+  const { state } = useStore();
+  const [menu, setMenu] = useState([]);
+
+  useEffect(() => {
+    setMenu(state.getProduct);
+  }, [state]);
+
+  const linkItem = Object.values(menu)
+    .filter((v: any) => v.cat_title + '' === 'Sanitary')
+    .map((v: any) => {
+      return {
+        title: v.name,
+        slug: v.slug,
+      };
+    });
+
+  const linkItemOne = Object.values(linkItem)
+    .map((v: any, k: any) => (
+        <Link key={k} href={'product/'+v.slug}>
+          <a>{v.title}</a>
+        </Link>
+    ));
+
   return (
     <ul>
-      <li className="col-2">
-        <Link href="">
-          <a>Urinals</a>
-        </Link>
-        <Link href="">
-          <a>Toilet seats</a>
-        </Link>
-        <Link href="">
-          <a>Water closet</a>
-        </Link>
-      </li>
+      <li className="col-2">{linkItemOne.slice(0, 5)}</li>
 
       <li className="col-2">
-        <Link href="">
-          <a>Washbasin</a>
-        </Link>
-        <Link href="">
-          <a>Bathtub</a>
-        </Link>
-        <Link href="">
-          <a>Bidet</a>
-        </Link>
+      {linkItemOne.slice(5, 10)}
       </li>
 
       <li className="col-5">
@@ -42,6 +49,6 @@ export const Sanitary = () => {
       </li>
     </ul>
   );
-}
+};
 
-export default Sanitary 
+export default Sanitary;
