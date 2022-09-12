@@ -27,7 +27,7 @@ const Map = ( {src,width,height,allowfullscreen,loading,referrerpolicy}: Iframe)
             {
                 `
                 iframe{
-                    width: 100vw;
+                    width: 100%;
                     border: 0;
                     height: 40rem;
                 }

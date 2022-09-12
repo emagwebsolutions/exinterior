@@ -6,7 +6,7 @@ import { useStore } from 'store/store';
 type QRY = {
   qry: string | string[] | undefined
 }
-const Categories = ({qry}: QRY) => {
+const Brand = ({qry}: QRY) => {
   const { state } = useStore();
   const [menu, setMenu] = useState([]);
 
@@ -15,13 +15,13 @@ const Categories = ({qry}: QRY) => {
   }, [state]);
 
   const linkItem = Object.values(menu)
-    .filter((v: any) => v.cat_title + '' === qry)
-    .map((v: any, k: any) => (
+    .filter((v: {cat_title: string}) => v.cat_title + '' === qry)
+    .map((v: {brand: string}, k: number) => (
       <li key={k}>
-        <Link href={'product/' + v.slug}>
+        <Link href={'/shop/' + v.brand}>
           <a>
             <i className="fa fa-check-circle-o"></i>
-            <span>{v.name}</span>
+            <span>{v.brand}</span>
           </a>
         </Link>
       </li>
@@ -30,4 +30,4 @@ const Categories = ({qry}: QRY) => {
   return <ul className="category-links">{linkItem}</ul>;
 };
 
-export default Categories;
+export default Brand;

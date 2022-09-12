@@ -1,6 +1,6 @@
 @media (min-width: 35em) {
   nav {
-    width: 100vw;
+    width: 100%;
     padding: 1em;
     background-color: white(0.7);
     .hamburger {
@@ -152,7 +152,7 @@
 
     .container {
       transition: 0.2s ease-in;
-      width: calc(100vw - 50px);
+      width: calc(100% - 50px);
       height: 100vh;
       background-color: white;
       z-index: 9999999;
