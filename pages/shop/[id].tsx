@@ -28,11 +28,8 @@ const Shop = () => {
       brand: v.brand,
     }))[0];
 
-  const cat = brandData ? brandData?.cat_title+'' : id ;
+  const cat = brandData ? brandData?.cat_title + '' : id;
   const prod = brandData ? brandData?.brand : id ? id : '';
-
-  console.log(cat)
-  console.log(prod)
 
   return (
     <div className="shop">
@@ -53,7 +50,7 @@ const Shop = () => {
             <div className="container">
               <div className="col-1"></div>
               <div className="col-4">
-                <Productsort />
+                <Productsort qry={prod} />
               </div>
             </div>
 

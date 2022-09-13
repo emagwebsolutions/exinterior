@@ -192,6 +192,11 @@ export const fetchProduct = async (dispatch) => {
   });
 
   dispatch({
+    type: 'FILTER_PRODUCT',
+    payload: '',
+  });
+
+  dispatch({
     type: 'GET_PRODUCT',
     payload: data,
   });
@@ -219,6 +224,7 @@ const initialState = {
     ? JSON.parse(getCookie('getteamsection'))
     : '',
   getBrand: getCookie('getbrand') ? JSON.parse(getCookie('getbrand')) : '',
+  filterProduct: ''
 };
 
 const reducer = (state, { type, payload }) => {
@@ -265,6 +271,11 @@ const reducer = (state, { type, payload }) => {
         ...state,
         getBrand: state.getBrand ? state.getBrand : payload,
       };
+    case 'FILTER_PRODUCT':
+        return {
+          ...state,
+          filterProduct: payload,
+        };
     default:
       return state;
   }

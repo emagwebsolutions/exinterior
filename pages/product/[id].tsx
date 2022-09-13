@@ -1,11 +1,13 @@
 import { useRouter } from "next/router"
+import Categories from 'components/shop/Categories';
 
 const Product = ()=>{
 
   const router = useRouter()
+
   return (
     <>
-    PRODUCT PAGE
+    {/* <Categories qry={cat} /> */}
     </>
   )
 }

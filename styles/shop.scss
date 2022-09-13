@@ -33,7 +33,7 @@
       background-color: primary();
       width: 100%;
       color: white;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       padding: 0.9rem;
       border-radius: 2em;
       margin-block: 2em;
@@ -62,7 +62,6 @@
     position: relative;
     align-items: center;
 
-
     &:hover a {
       a {
         margin-top: 4em;
@@ -82,7 +81,6 @@
       img{
            transition: .2s ease-in;
       }
-   
     }
 
     a {
@@ -90,8 +88,8 @@
       h3 {
         background-color: white;
         font-size: 1.2rem;
-        width: 23rem;
-        margin-inline: auto;
+        width: 20.4rem;
+        margin-inline: 2rem;
         text-align: center;
         padding: 0.6rem;
       }
