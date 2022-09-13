@@ -171,7 +171,11 @@ export const fetchProduct = async (dispatch) => {
     producttype,
     availability,
     price,
-    imagesGallery,
+    imagesGallery[]{
+      asset->{
+        url
+      }
+    },
     body,
     rating,
     numReviews,
@@ -191,10 +195,6 @@ export const fetchProduct = async (dispatch) => {
     };
   });
 
-  dispatch({
-    type: 'FILTER_PRODUCT',
-    payload: '',
-  });
 
   dispatch({
     type: 'GET_PRODUCT',

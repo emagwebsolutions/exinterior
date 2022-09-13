@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useStore } from 'store/store';
+import imageURLBuilder from '@sanity/image-url';
+import client from '../../store/client';
 
 type QRY = {
   qry: string | string[] | undefined;
@@ -12,6 +14,8 @@ const Products = ({ qry }: QRY) => {
   const { state } = useStore();
   const [product, setProduct] = useState([]);
   const [filterProd, setFilterprod] = useState([]);
+
+  const builder = imageURLBuilder(client);
 
   useEffect(() => {
     setFilterprod(state.filterProduct);
@@ -37,35 +41,37 @@ const Products = ({ qry }: QRY) => {
       (
         v: { slug: string; mainImage: string; name: string; price: number },
         k: any
-      ) => (
-        <div key={k} className="col-2">
-          <div className="prod-imgbx-wrapper">
-            <Link href={'product/' + v.slug}>
-              <a>
-                <div>
-                  <Image
-                    src={v.mainImage}
-                    width="3"
-                    height="3"
-                    alt=""
-                    layout="responsive"
-                  />
-                </div>
-
-                <div>
+      ) => {
+        return (
+          <div key={k} className="col-2">
+            <div className="prod-imgbx-wrapper">
+              <Link href={`/product?cat=${qry}&slug=${v.slug}`}>
+                <a>
                   <div>
-                    <h3>{v.name}</h3>
-                    <h4>GHc {v.price}</h4>
-                    <Link href="/">
-                      <a>Add to Cart</a>
-                    </Link>
+                    <Image
+                      src={v.mainImage}
+                      width="3"
+                      height="3"
+                      alt=""
+                      layout="responsive"
+                    />
                   </div>
-                </div>
-              </a>
-            </Link>
+
+                  <div>
+                    <div>
+                      <h3>{v.name}</h3>
+                      <h4>GHc {v.price}</h4>
+                      <Link href="/">
+                        <a>Add to Cart</a>
+                      </Link>
+                    </div>
+                  </div>
+                </a>
+              </Link>
+            </div>
           </div>
-        </div>
-      )
+        );
+      }
     );
 
   return <>{products}</>;

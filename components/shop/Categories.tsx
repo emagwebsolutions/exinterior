@@ -18,7 +18,7 @@ const Categories = ({qry}: QRY) => {
     .filter((v: any) => v.cat_title + '' === qry)
     .map((v: any, k: any) => (
       <li key={k}>
-        <Link href={'product/' + v.slug}>
+        <Link href={`/product?cat=${qry}&slug=${v.slug}`}>
           <a>
             <i className="fa fa-check-circle-o"></i>
             <span>{v.name}</span>

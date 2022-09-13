@@ -1,5 +1,5 @@
-const PageNotFound = () => {
-  return <>PAGE NOT FOUND</>;
+const Pagenotfound = () => {
+  return <div className="pagenotfoung">PAGE NOT FOUND!</div>;
 };
 
-export default PageNotFound;
+export default Pagenotfound;
