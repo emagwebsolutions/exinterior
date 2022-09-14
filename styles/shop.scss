@@ -89,7 +89,6 @@
     a {
       color: black();
       display: block;
- 
 
       div {
         width: 100%;
@@ -140,7 +139,17 @@
       transition: 0.2s ease-in;
     }
   }
-  .thumbnail{
+  .thumbnail {
     display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    justify-content: center;
+    div {
+      flex-basis: 11%;
+      flex-grow: 0;
+      flex-shrink: 0;
+      background-color: red;
+
+    }
   }
 }

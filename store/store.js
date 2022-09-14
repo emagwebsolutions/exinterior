@@ -224,7 +224,8 @@ const initialState = {
     ? JSON.parse(getCookie('getteamsection'))
     : '',
   getBrand: getCookie('getbrand') ? JSON.parse(getCookie('getbrand')) : '',
-  filterProduct: ''
+  filterProduct: '',
+  setMainimage: ''
 };
 
 const reducer = (state, { type, payload }) => {
@@ -276,6 +277,11 @@ const reducer = (state, { type, payload }) => {
           ...state,
           filterProduct: payload,
         };
+        case 'SET_MAIN_IMAGE':
+          return {
+            ...state,
+            setMainimage: payload,
+          };
     default:
       return state;
   }
