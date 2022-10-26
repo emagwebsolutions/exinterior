@@ -23,14 +23,16 @@ export const Sanitary = () => {
 
   const linkItemOne = Object.values(linkItem)
     .map((v: any, k: any) => (
-        <Link key={k} href={'product/'+v.slug}>
+        <Link key={k} href={'/product?cat=Sanitary&slug='+v.slug}>
           <a>{v.title}</a>
         </Link>
     ));
 
   return (
     <ul>
-      <li className="col-2">{linkItemOne.slice(0, 5)}</li>
+      <li className="col-2">
+        {linkItemOne.slice(0, 5)}
+        </li>
 
       <li className="col-2">
       {linkItemOne.slice(5, 10)}

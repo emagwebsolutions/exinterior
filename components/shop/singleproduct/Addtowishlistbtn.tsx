@@ -1,8 +1,9 @@
 import React from 'react'
+import Button from './Button'
 
 const Addtowishlistbtn = () => {
   return (
-    <div>Addtowishlistbtn</div>
+    <Button link="" name="ADD TO WISHLIST" />
   )
 }
 

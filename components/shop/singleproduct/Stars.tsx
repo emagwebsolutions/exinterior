@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 const Stars = () => {
   return (
-    <div>Stars</div>
-  )
-}
+    <div className="ratings">
+      <i className="fa fa-star-o"></i>
+      <i className="fa fa-star-o"></i>
+      <i className="fa fa-star-o"></i>
+      <i className="fa fa-star-o"></i>
+      <i className="fa fa-star-o"></i>
+    </div>
+  );
+};
 
-export default Stars
+export default Stars;

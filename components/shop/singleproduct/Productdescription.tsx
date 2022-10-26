@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const Productdescription = () => {
-  return (
-    <div>Productdescription</div>
-  )
-}
+type Description = {
+  des: React.ReactNode
+};
 
-export default Productdescription
+const Productdescription = ({ des }: Description) => {
+  return <div className="prod-description">{des}</div>;
+};
+
+export default Productdescription;

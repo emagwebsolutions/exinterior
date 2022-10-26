@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
+import Button from './Button';
 
 const Addtocartbtn = () => {
-  return (
-    <div>Addtocartbtn</div>
-  )
-}
+  return <Button link="" name="ADD TO CART" />;
+};
 
-export default Addtocartbtn
+export default Addtocartbtn;

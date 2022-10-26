@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Productprice = () => {
+type Price = {
+  price: string
+}
+
+const Productprice = ({price}: Price) => {
   return (
-    <div>Productprice</div>
+    <div className="prod-price">GH₵ {price}</div>
   )
 }
 
