@@ -21,7 +21,7 @@ const Homesectionfour = () => {
     .map((vl: any, k: any) => {
       return (
         <div key={k} className="col-3 caption-bx">
-          <div>
+          <div className="featured-prod">
             <Image
               src={vl.mainImage}
               alt=""
@@ -29,6 +29,13 @@ const Homesectionfour = () => {
               width="2"
               height="2"
             />
+            <div>
+              <div>
+              <h2>{vl.name}</h2>
+              <h3>GHs {vl.price}</h3>
+              <p>{vl.material}</p>
+              </div>
+            </div>
           </div>
         </div>
       );

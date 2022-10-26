@@ -20,7 +20,7 @@ const Homesectiontwo = () => {
     .map((vl: any, k: any) => {
       return (
         <div key={k} className="about-us">
-          <div className="col-2">
+          <div className="col-2 welcome-image-wrapper">
             <Image
               src={vl.mainImage}
               alt=""
@@ -28,6 +28,7 @@ const Homesectiontwo = () => {
               width="8"
               height="7"
             />
+            <div></div>
           </div>
 
           <div className="col-2">
